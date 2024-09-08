@@ -1,6 +1,6 @@
 CXXFLAGS += -std=c++11
 
-LIB_FUZZING_ENGINE ?= fuzzing_engine.o
+#LIB_FUZZING_ENGINE ?= fuzzing_engine.o
 
 all: fuzzer
 
@@ -13,13 +13,13 @@ check: all
 	   ./fuzzer
 
 
-fuzzer: fuzzer.cpp my_api.a standalone_fuzz_target_runner.o
-		${CXX} ${CXXFLAGS} $< my_api.a ${LIB_FUZZING_ENGINE} -o $@
-#		zip -q -e fuzzer_seed_corpus.zip
+fuzzer: fuzzer.cpp my_api.a
+	${CXX} ${CXXFLAGS} $< my_api.a ${LIB_FUZZING_ENGINE} -o $@
+#	zip -q -e fuzzer_seed_corpus.zip
 
 
 my_api.a: my_api.cpp my_api.h
-		  ${CXX} ${CXXFLAGS} $^ -c
-		  ar ruv my_api.a my_api.o
+	${CXX} ${CXXFLAGS} $^ -c
+	ar ruv my_api.a my_api.o
 
 
