@@ -13,7 +13,7 @@ check: all
 
 fuzzer: fuzzer.cpp my_api.a
 		${CXX} ${CXXFLAGS} $< my_api.a ${LIB_FUZZING_ENGINE} -o $@
-		zip -q -e fuzzer_seed_corpus.zip
+#		zip -q -e fuzzer_seed_corpus.zip
 
 
 my_api.a: my_api.cpp my_api.h
