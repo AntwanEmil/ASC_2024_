@@ -1,0 +1,1 @@
+make -j$(nproc) all    # Build the fuzz targets.
