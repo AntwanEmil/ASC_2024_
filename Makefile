@@ -18,6 +18,6 @@ fuzzer: fuzzer.cpp my_api.a
 
 my_api.a: my_api.cpp my_api.h
 		  ${CXX} ${CXXFLAGS} $^ -c
-		  ar ruv my_api.h my_api.o
+		  ar ruv my_api.a my_api.o
 
 
