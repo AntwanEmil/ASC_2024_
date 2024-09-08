@@ -1,5 +1,7 @@
 CXXFLAGS += -std=c++11
 
+LIB_FUZZING_ENGINE ?= main.o
+
 all: fuzzer
 
 clean:
@@ -21,3 +23,4 @@ my_api.a: my_api.cpp my_api.h
 		  ar ruv my_api.a my_api.o
 
 
+main.o: main.cpp
