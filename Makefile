@@ -1,6 +1,6 @@
 CXXFLAGS += -std=c++11
 
-
+LIB_FUZZING_ENGINE ?= fuzzing_engine.o
 
 all: fuzzer
 
