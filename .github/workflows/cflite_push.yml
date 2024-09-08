@@ -2,7 +2,7 @@ name: Push Fuzzing
 on:
   push:
     branches:
-      - main  # Use your actual default branch here.
+      - master  # Use your actual default branch here.
 permissions: read-all
 jobs:
   PushFuzzing:
